@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { products } from "@/data/data.json";
+import products from "@/data/data.json";
 import { useEffect, useState } from "react";
 import Loader from "@/components/Loader";
 
@@ -11,7 +11,7 @@ export default function Product() {
   const [product, setProduct] = useState<any>(null);
 
   useEffect(() => {
-    const data = products.filter((product) => product?.slug.toString() === id);
+    const data = products.products.filter((product) => product?.slug.toString() === id);
     setProduct(data ? data[0] : null);
   }, []);
 

@@ -1,6 +1,10 @@
 'use client'
 import Script from "next/script";
-
+declare global {
+    interface Window {
+        Tally: any;
+    }
+}
 export default function ContactUs() {
     return (
         <section className="bg-white py-16 px-6 md:px-20 min-h-[900px]" id="contact">
@@ -45,8 +49,8 @@ export default function ContactUs() {
                 id="tally-js"
                 src="https://tally.so/widgets/embed.js"
                 onLoad={() => {
-                    if (Tally) {
-                        Tally.loadEmbeds();
+                    if (typeof window !== "undefined" && window.Tally) {
+                        window.Tally.loadEmbeds();
                     }
                 }}
             />
