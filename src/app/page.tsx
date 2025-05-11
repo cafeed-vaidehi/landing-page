@@ -10,7 +10,7 @@ export default function Home() {
         </div>
       </main>
       <section id="about" className="px-4 py-12">
-        <h3 className="text-center font-extrabold text-black text-2xl md:text-3xl">
+        <h3 className="text-center font-extrabold text-black text-2xl md:text-3xl dark:text-white">
           YOUR GLOBAL PARTNER WITH INTEGRITY<br />
           SERVING THE ORGANIC INDUSTRY
         </h3>
