@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <a className="fixed bottom-6 right-6 bg-[#25D366] p-2 z-100" href="https://wa.me/918458994108" // Replace with your WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer">
+          <IconBrandWhatsapp color="white"></IconBrandWhatsapp>
+        </a>
+
+        <div className="relative w-full">
+          <Header></Header>
+          {children}
+          <Footer></Footer>
+        </div>
       </body>
     </html>
   );
